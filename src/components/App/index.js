@@ -3,32 +3,26 @@
 */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import SideBar from './SideBar';
+// import SideBar from './SideBar';
 import './app.scss';
 
 class AppCom extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         title: 'this is title'
       };
    }
    static defaultProps = {
       routePaths: []
    };
    render() {
-      const { title } = this.state;
-      const { routePaths } = this.props;
+      // const { routePaths } = this.props;
 
       return (
          <div id="app-container">
-            <header className="header">this is React-ECharts-Template</header>
+            <header className="header">汽車買賣</header>
             <div className="main">
-               <SideBar className="main-sidebar" routePaths={routePaths} />
                <div className="main-charts-content">
-                  <header className="main-header">
-                     <p>{title}</p>
-                  </header>
                   <div className="charts">{this.props.children}</div>
                </div>
             </div>
