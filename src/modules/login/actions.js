@@ -1,9 +1,10 @@
 import { verifyLogin } from '../../api/login';
 import { VERIFY_LOGIN } from '../types-constant'
 
-export function verify_login({path, key}) {
-    return async  dispatch => {
+export function verifyLoginAction({path, key}) {
+    return async dispatch => {
         const loginStatus = await verifyLogin(path);
+        console.log('loginStatus:', loginStatus)
 
         await dispatch({
             type: VERIFY_LOGIN,

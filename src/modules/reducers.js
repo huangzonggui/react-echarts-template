@@ -2,10 +2,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import charts from './charts/reducer';
+import login from './login/reducer';
 
 // 合并到主reducer
 const reducers = {
    charts,
+    login,
    routing: routerReducer
 };
 

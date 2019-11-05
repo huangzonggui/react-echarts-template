@@ -36,6 +36,7 @@ function separateParams(url) {
 
 // 主要请求方法
 export default function request(config) {
+   console.log('config:', config)
    let { method, url, data = {}, host, headers } = config;
 
    method = (method && method.toUpperCase()) || 'GET';
@@ -43,6 +44,7 @@ export default function request(config) {
    const { path, params } = separateParams(url);
 
    url = host ? `${deleteSlash(host)}${addSlash(path)}` : `${deleteSlash(basicHost)}${addSlash(path)}`;
+    console.log('req url:', url)
 
    return axios({
       url,
@@ -52,6 +54,7 @@ export default function request(config) {
       params: Object.assign(method === 'GET' ? data : {}, params)
    }).catch(err => {
       // 请求出错
+
       console.log('request error, HTTP CODE: ', err.response.status);
 
       return Promise.reject(err);

@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Login from '../components/Login';
+import { verifyLoginAction } from '../modules/login/actions';
 
 class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            renderer: 'canvas'
         };
     }
     async componentWillMount() {
+        const path = '/login';
+        const key = 'loginStatus';
+
+        await this.props.verifyLogin({ path, key });
     }
     render() {
         return <Login />;
@@ -18,7 +23,8 @@ class LoginPage extends Component {
 }
 
 export default connect(
-    state => ({ }),
+    state => ({ loginStatus: state.login }),
     dispatch => ({
+        verifyLogin: bindActionCreators(verifyLoginAction, dispatch)
     })
 )(LoginPage);
