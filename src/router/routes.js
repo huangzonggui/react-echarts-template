@@ -10,6 +10,7 @@ import { hot } from 'react-hot-loader';
 // import lazyLoad from './lazyLoad';
 import App from '../containers/App';
 import RegisterPage from '../containers/RegisterPage';
+import LoginPage from '../containers/LoginPage';
 
 import HeatmapChart from '../containers/HeatmapChart';
 import MapChart from '../containers/MapChart';
@@ -24,14 +25,15 @@ const Root = () => (
             render={props => (
                <App>
                   <Switch>
-                     <Route path="/" exact component={HeatmapChart} />
+                     <Route path="/" exact component={LoginPage} />
                      <Route path="/register" exact component={RegisterPage} />
+                      <Route path="/login" exact component={LoginPage} />
 
                      <Route path="/heatmap" component={HeatmapChart} />
                      <Route path="/map" component={MapChart} />
                      <Route path="/parallel" component={ParallelChart} />
                      <Route path="/graph" component={GraphChart} />
-                     <Route render={() => <Redirect to="/" />} />
+                     <Route render={() => <Redirect to="/login" />} />
                   </Switch>
                </App>
             )}

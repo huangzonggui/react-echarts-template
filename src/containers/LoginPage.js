@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Register from '../components/Register';
+import Login from '../components/Login';
 
-class RegisterPage extends Component {
+class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,7 @@ class RegisterPage extends Component {
     async componentWillMount() {
     }
     render() {
-        return <Register />;
+        return <Login />;
     }
 
 }
@@ -21,4 +21,4 @@ export default connect(
     state => ({ }),
     dispatch => ({
     })
-)(RegisterPage);
+)(LoginPage);

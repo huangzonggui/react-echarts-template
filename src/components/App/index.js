@@ -19,7 +19,7 @@ class AppCom extends Component {
       // const { routePaths } = this.props;
 
       return (
-         <div id="app-container">
+         <div id="app-container" className="bg-primary text-white">
             <header className="header">汽車買賣</header>
             <div className="main">
                <div className="main-charts-content">
