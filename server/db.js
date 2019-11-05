@@ -112,10 +112,15 @@ module.exports = function() {
       return { data, links };
    }());
 
+   const login = (function () {
+       return {status: 'ok'};
+   }());
+
    return {
       heatmap,
       map,
       parallel,
-      graph
+      graph,
+       login
    };
 };
