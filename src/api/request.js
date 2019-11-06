@@ -44,7 +44,7 @@ export default function request(config) {
    const { path, params } = separateParams(url);
 
    url = host ? `${deleteSlash(host)}${addSlash(path)}` : `${deleteSlash(basicHost)}${addSlash(path)}`;
-    console.log('req url:', url)
+    console.log('req url:', url, 'headers:', headers)
 
    return axios({
       url,
@@ -64,5 +64,6 @@ export default function request(config) {
 // 一些常用的请求方法
 export const get = (url, data) => request({ url, data });
 export const post = (url, data) => request({ method: 'POST', url, data });
+// export const post = (url, data) => request({ method: 'POST', headers: { 'content-type': 'application/json' }, url, data });
 export const put = (url, data) => request({ method: 'PUT', url, data });
 export const del = (url, data) => request({ method: 'DELETE', url, data });

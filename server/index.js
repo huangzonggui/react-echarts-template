@@ -7,8 +7,20 @@ const mounted = require('./route');
 const DB = createDB();
 const router = jsonServer.router(DB);
 
-server.use(jsonServer.bodyParser);
 server.use(middlewares);
+
+server.use(jsonServer.bodyParser);
+server.use((req, res, next) => {
+    console.log('req:', req.url);
+    if (req.method === 'POST' && req.url === '/login') {
+        // req.body.createdAt = Date.now()
+        res.sendStatus(200);
+    } else {
+        // Continue to JSON Server router
+        next()
+    }
+
+})
 
 mounted(server, DB);
 server.use(router);

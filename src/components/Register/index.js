@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
-import '../../scss/css/main.css';
-import '../../scss/css/util.css';
+// import '../../scss/css/main.css';
+// import '../../scss/css/util.css';
 
 export default class Register extends PureComponent {
     constructor(props) {

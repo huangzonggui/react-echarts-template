@@ -1,3 +1,3 @@
 export let isValidValue = (value) => {
-    return (value !== '' && value !== undefined && value !== null);
+    return (value !== '' && value !== undefined && value !== null && value !== []);
 }

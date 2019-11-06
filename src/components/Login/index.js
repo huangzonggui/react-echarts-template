@@ -1,9 +1,11 @@
 import React, {PureComponent} from 'react';
-import '../../scss/css/main.css';
-import '../../scss/css/util.css';
+import { ToastsStore } from 'react-toasts'
+// import '../../scss/css/main.css';
+// import '../../scss/css/util.css';
 import {isValidValue} from '../../utils/checkValue';
+import { verifyLogin } from '../../api/requestApi'
 
-export default class Register extends PureComponent {
+export default class Login extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +47,11 @@ export default class Register extends PureComponent {
         }
 
         if (isValidValue(emailTmp) && isValidValue(pwdTmp)) {
-            // TODO: request
+            verifyLogin('login', {'email': emailTmp, 'password': pwdTmp}).then((res) => {
+                console.log('verifyLogin data:', res, 'props:', this.props)
+                ToastsStore.success('login success')
+                this.props.loginSuccess();
+            })
         }
     }
 

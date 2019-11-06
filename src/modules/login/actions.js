@@ -1,4 +1,4 @@
-import { verifyLogin } from '../../api/login';
+import { verifyLogin } from '../../api/requestApi';
 import { VERIFY_LOGIN } from '../types-constant'
 
 export function verifyLoginAction({path, key}) {

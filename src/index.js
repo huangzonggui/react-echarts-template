@@ -3,6 +3,8 @@
 */
 
 import './scss/index.scss';
+import './scss/css/main.css';
+import './scss/css/util.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

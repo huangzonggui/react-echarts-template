@@ -41,6 +41,8 @@ const typesCommands = {
 
 export default function home(state = initialState, action) {
    const actionResponse = typesCommands[action.type];
+   console.log('actionResponse', actionResponse);
+   console.log('actionResponse?', actionResponse?1:0);
 
    return actionResponse ? actionResponse(state, action) : state;
 }

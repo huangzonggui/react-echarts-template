@@ -112,15 +112,33 @@ module.exports = function() {
       return { data, links };
    }());
 
-   const login = (function () {
-       return {status: 'ok'};
+   const carList = (function () {
+      const carObj = Mock.mock({
+          'carList|1-100': [{
+              'id|+1': 1,
+              'name': '@ctitle',
+              'place': '@city',
+              'price|4-200.3-2': 1,
+              'img|1-8': 1
+          }]
+      })
+
+       console.log(carObj)
+      return carObj;
+
    }());
+
+   // const login = (function (data) {
+   //    console.log('mock server accept data:', data)
+   //     return {status: 'ok'};
+   // }());
 
    return {
       heatmap,
       map,
       parallel,
       graph,
-       login
+      // login,
+       carList,
    };
 };

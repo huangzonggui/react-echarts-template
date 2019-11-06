@@ -11,11 +11,13 @@ import { hot } from 'react-hot-loader';
 import App from '../containers/App';
 import RegisterPage from '../containers/RegisterPage';
 import LoginPage from '../containers/LoginPage';
+import CarListPage from '../containers/CarListPage';
 
 import HeatmapChart from '../containers/HeatmapChart';
 import MapChart from '../containers/MapChart';
 import ParallelChart from '../containers/ParallelChart';
 import GraphChart from '../containers/GraphChart';
+import { ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts'
 
 const Root = () => (
    <div>
@@ -28,6 +30,7 @@ const Root = () => (
                      <Route path="/" exact component={LoginPage} />
                      <Route path="/register" exact component={RegisterPage} />
                       <Route path="/login" exact component={LoginPage} />
+                      <Route path="/carList" exact component={CarListPage} />
 
                      <Route path="/heatmap" component={HeatmapChart} />
                      <Route path="/map" component={MapChart} />
@@ -40,6 +43,7 @@ const Root = () => (
          />
          <Route render={() => <Redirect to="/" />} />
       </Switch>
+       <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.BOTTOM_CENTER}/>
    </div>
 );
 

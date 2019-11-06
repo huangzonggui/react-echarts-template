@@ -19,10 +19,10 @@ class AppCom extends Component {
       // const { routePaths } = this.props;
 
       return (
-         <div id="app-container" className="bg-primary text-white">
-            <header className="header">汽車買賣</header>
+         <div id="app-container" className="">
+            <header className="header bg-primary text-white">汽車買賣</header>
             <div className="main">
-               <div className="main-charts-content">
+               <div className="main-charts-content overflow-auto ">
                   <div className="charts">{this.props.children}</div>
                </div>
             </div>
